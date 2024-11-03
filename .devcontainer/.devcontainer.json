@@ -4,17 +4,16 @@
   ],
   "portsAttributes": {
     "3000": {
-      "label": "React App",
-       "onAutoForward": "openPreview"
+      "label": "Development Server",
+      "onAutoForward": "openPreview"
     }
   },
-  "updateContentCommand": "npm install",
-  "postAttachCommand": "npm run dev",
-  // Configure tool-specific properties.
+  "updateContentCommand": "pnpm install",
+  "postAttachCommand": "pnpm run dev",
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "src/App.tsx"
+        "src/index.ts"
       ]
     },
     "vscode": {
