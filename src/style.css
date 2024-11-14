@@ -65,6 +65,7 @@ header {
 
   & a {
     overflow: hidden;
+    border-radius: 0.25em;
 
     &:hover {
       & img {
@@ -86,5 +87,21 @@ header {
 @media screen and (max-width: 640px) {
   .gallery {
     grid-template-columns: 1fr;
+  }
+}
+
+.phone-number-picture {
+  width: 8.5em;
+  border-radius: 0.5em;
+  margin-top: 2px;
+  mix-blend-mode: darken;
+  filter: invert(1) contrast(1.5);
+  object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  .phone-number-picture {
+    filter: none;
+    mix-blend-mode: hard-light;
   }
 }
