@@ -16,21 +16,7 @@ html {
 
 body {
   margin: 0;
-}
-
-main {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.message {
-  padding-bottom: 1em;
-}
-
-.message p {
-  text-align: center;
+  padding: 16px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,7 +30,59 @@ main {
   }
 }
 
-.message img {
-  object-fit: cover;
-  border-radius: 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .logo {
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px;
+    color: inherit;
+    border: 1px solid currentColor;
+    text-decoration: none;
+
+  }
+}
+
+.gallery {
+  display: grid;
+  padding: 0;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+
+  & a {
+    overflow: hidden;
+
+    &:hover {
+      & img {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+
+    & img {
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-out;
+      opacity: 0.9;
+      scale: 1.035;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
